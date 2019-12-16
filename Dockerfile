@@ -1,9 +1,9 @@
 FROM openjdk:8-jre
 
-ENV PRESTO_VERSION 311
+ENV PRESTO_VERSION 326
 
 RUN apt-get update && \
-  apt-get install -yf python && \
+  apt-get install -yf python less && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   mkdir /opt/presto && \
   curl https://repo1.maven.org/maven2/io/prestosql/presto-server/${PRESTO_VERSION}/presto-server-${PRESTO_VERSION}.tar.gz -o presto-server.tar.gz && \ 
